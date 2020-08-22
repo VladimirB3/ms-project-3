@@ -21,6 +21,12 @@ def add_game():
     return render_template('addgame.html', genres=mongo.db.genres.find())
 
 
+@app.route('/insert_game', methods=['POST'])
+def insert_game():
+    games = mongo.db.games
+    games.insert_one(request.form.to_dict())
+    return redirect(url_for('get_games'))
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
