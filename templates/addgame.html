@@ -4,6 +4,16 @@
 <h3>Add a Game</h3>
 <div class="row">
     <form action="" method="POST" class="col s12">
+        <div class="input-field col s12">
+            <i class="material-icons prefix">style</i>
+            <select id="genre_name" name="genre_name">
+                <option value="" disabled selected>Choose Genre</option>
+                {% for genre in genres %}
+                    <option value="{{genre.genre_name}}">{{genre.genre_name}}</option>
+                {% endfor %}
+            </select>
+            <label>Genres</label>
+        </div>
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">sort_by_alpha</i>

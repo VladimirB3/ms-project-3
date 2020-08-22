@@ -18,7 +18,7 @@ def get_games():
 
 @app.route('/add_game')
 def add_game():
-    return render_template('addgame.html')
+    return render_template('addgame.html', genres=mongo.db.genres.find())
 
 
 if __name__ == '__main__':
