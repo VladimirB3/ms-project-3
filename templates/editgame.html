@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h3>Change Game Info</h3>
+<div class="row">
+    <form action="{{ url_for('insert_game') }}" method="POST" class="col s12">
+        <div class="input-field col s12">
+            <i class="material-icons prefix">style</i>
+            <select id="genre_name" name="genre_name">
+                <option value="" disabled selected>Choose Genre</option>
+                {% for genre in genres %}
+                    {% if genre.genre_name == game.genre_name %}
+                    <option value="{{genre.genre_name}}" selected>{{genre.genre_name}}</option>
+                    {% else %}
+                    <option value="{{genre.genre_name}}">{{genre.genre_name}}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+            <label>Genres</label>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">sort_by_alpha</i>
+                <input id="game_name" name="game_name" type="text" class="validate" value="{{game.game_name}}">
+                <label for="icon_prefix">Game Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">developer_mode</i>
+                <input id="develover_name" name="developer_name" type="text" class="validate" value="{{game.developer_name}}">
+                <label for="icon_prefix">Developer Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">engineering</i>
+                <input id="director_name" name="director_name" type="text" class="validate" value="{{game.director_name}}">
+                <label for="icon_prefix">Director Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">post_add</i>
+                <textarea id="summary" name="summary" type="textarea" class="materialize-textarea">{{game.summary}}</textarea>
+                <label for="icon_telephone">Summary</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">today</i>
+                <input id="release_date" name="release_date" type="text" class="datepicker">
+                <label for="icon_prefix">Release Date</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="switch">
+                <label>
+                    <span class="material-icons">high_quality</span>
+                        {% if game.quality %}
+                        <input id="quality" name="quality" type="checkbox" checked>
+                        {% else %}
+                        <input id="quality" name="quality" type="checkbox">
+                        {% endif %}
+                        <span class="lever"></span>
+                    <span class="material-icons">4k</span>
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <button class="btn waves-effect waves-light" type="submit" name="action">Add Game
+                <i class="material-icons right">add_task</i>
+            </button>
+        </div>
+    </form>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+        release_date = Date.parse('{{game.release_date}}');
+        $('#release_date').pickadate('picker').set('select', release_date, {format: 'dd/mm/yyyy'}).trigger('change')
+    });
+  </script>
+
+{% endblock %}

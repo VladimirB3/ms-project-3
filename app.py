@@ -27,6 +27,14 @@ def insert_game():
     games.insert_one(request.form.to_dict())
     return redirect(url_for('get_games'))
 
+
+@app.route('/edit_game/<game_id>')
+def edit_game(game_id):
+    the_game =  mongo.db.games.find_one({"_id": ObjectId(game_id)})
+    all_genres =  mongo.db.genres.find()
+    return render_template('editgame.html', game=the_game,
+                           genres=all_genres)
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
