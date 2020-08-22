@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h3>Add a Game</h3>
+<div class="row">
+    <form action="" method="POST" class="col s12">
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">sort_by_alpha</i>
+                <input id="game_name" name="game_name" type="text" class="validate">
+                <label for="icon_prefix">Game Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">post_add</i>
+                <textarea id="summary" name="summary" type="textarea" class="materialize-textarea"></textarea>
+                <label for="icon_telephone">Summary</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">today</i>
+                <input id="release_date" name="release_date" type="text" class="datepicker">
+                <label for="icon_prefix">Release Date</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="switch">
+                <label>
+                        <span class="material-icons">high_quality</span>
+                    <input id="quality" name="quality" type="checkbox">
+                    <span class="lever"></span>
+                        <span class="material-icons">4k</span>
+                </label>
+            </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+{% endblock %}
