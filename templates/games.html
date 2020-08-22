@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    URAA
-</head>
-<body>
+{% extends 'base.html' %}
+{% block content %}
+
     {% for game in games %}
         {{game.game_name}}
         {{game.genre_name}}
@@ -11,5 +8,5 @@
         {{game.director_name}}
         {{game.review_score}}
     {% endfor %}
-</body>
-</html>
+
+{% endblock %}
