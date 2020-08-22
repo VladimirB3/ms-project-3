@@ -14,9 +14,16 @@
 <ul class="collapsible" data-collapsible="accordion">
     {% for game in games %}
     <li>
-      <div class="collapsible-header"><i class="material-icons">videogame_asset</i>
-      <strong>{{game.game_name}}</strong> - {{game.genre_name}}
-      </div>
+        <div class="collapsible-header">
+            <div class="col s3">
+                <i class="material-icons">videogame_asset</i>
+                <a class="waves-effect waves-light btn btn_small">Info</a>
+                <a class="waves-effect waves-light btn btn_small blue">Edit</a>
+            </div>
+            <div class="col s9">
+                <strong>{{game.game_name}}</strong> - {{game.genre_name}}
+            </div>
+        </div>
       <div class="collapsible-body"><span>
       {{game.summary}}
       </span></div>
