@@ -5,17 +5,50 @@
     {% for game in games %}
     <li>
         <div class="collapsible-header">
-            <div class="col s3">
-                <i class="material-icons">videogame_asset</i>
+            <div class="col s6 valign-wrapper">
+                <i class="large material-icons">videogame_asset</i>
                 <a href="{{url_for('edit_game', game_id=game._id)}}" class="waves-effect waves-light btn btn_small blue">Edit</a>
-                <a href="{{url_for('delete_game', game_id=game._id)}}" class="waves-effect waves-light btn btn_small red">Del</a>
+                
             </div>
-            <div class="col s9">
-                <strong>{{game.game_name}}</strong> - {{game.genre_name}}
+            <div class="col s9 valign-wrapper">
+                    <strong>{{game.game_name}}</strong>
+            </div>
+        </div>
+         <div class="collapsible-body">
+            <div class="center-align">
+                <strong>GENRE - </strong>
+                <span>{{game.genre_name}}</span>
             </div>
         </div>
         <div class="collapsible-body">
-            <span>{{game.summary}}</span>
+            <div class="center-align">
+                <strong>DEVELOPER - </strong>
+                <span>{{game.developer_name}}</span>
+            </div>
+        </div>
+        <div class="collapsible-body">
+            <div class="center-align">
+                <strong>DIRECTOR - </strong>
+                <span>{{game.director_name}}</span>
+            </div>
+        </div>
+        <div class="collapsible-body">
+            <div class="center-align">
+                <strong>RELEASE DATE - </strong>
+                <span>{{game.release_date}}</span>
+            </div>
+        </div>
+        <div class="collapsible-body">
+            <div class="center-align">
+                <strong>SUMMARY - </strong>
+                <span>{{game.summary}}</span>
+            </div>
+        </div>
+        <div class="collapsible-body">
+            <div class="center-align">
+                <strong>DELETE GAME INFORMATION - </strong>
+                <span><a href="{{url_for('delete_game', game_id=game._id)}}" class="waves-effect waves-light btn btn_small red">Del</a></span>
+            </div>
         </div>
     </li>
     {% endfor %}
