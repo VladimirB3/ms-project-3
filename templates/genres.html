@@ -1,11 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="row">
+
+<h3>Genres</h3>
+
+    <ul class="collapsible" data-collapsible="accordion">
+        {% for genre in genres %}
+        <li>
+            <div class="collapsible-header">
+                    <a href="{{url_for('edit_genre', genre_id=genre._id)}}" class="waves-effect waves-light btn btn_small blue">Edit</a>
+                    <a href="" class="waves-effect waves-light btn btn_small red">Del</a>
+                <div class="col s9">
+                    <strong>{{genre.genre_name}}</strong>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>    
+</div>
+{% endblock %}

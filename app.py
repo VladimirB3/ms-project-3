@@ -56,6 +56,25 @@ def delete_game(game_id):
     mongo.db.games.remove({'_id': ObjectId(game_id)})
     return redirect(url_for('get_games'))
 
+@app.route('/get_genres')
+def get_genres():
+    return render_template('genres.html',
+    genres=mongo.db.genres.find())
+
+@app.route('/edit_genre/<genre_id>')
+def edit_genre(genre_id):
+    return render_template('editgenre.html',
+                           genre=mongo.db.genres.find_one(
+                           {'_id': ObjectId(genre_id)}))
+
+
+@app.route('/update_genre/<genre_id>', methods=['POST'])
+def update_genre(genre_id):
+    mongo.db.genres.update(
+        {'_id': ObjectId(genre_id)},
+        {'genre_name': request.form.get('genre_name')})
+    return redirect(url_for('get_genres'))
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
