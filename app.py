@@ -80,6 +80,17 @@ def delete_genre(genre_id):
     mongo.db.genres.remove({'_id': ObjectId(genre_id)})
     return redirect(url_for('get_genres'))    
 
+@app.route('/insert_genre', methods=['POST'])
+def insert_genre():
+    genre_doc = {'genre_name': request.form.get('genre_name')}
+    mongo.db.genres.insert_one(genre_doc)
+    return redirect(url_for('get_genres'))
+
+
+@app.route('/add_genre')
+def add_genre():
+    return render_template('addgenre.html')
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
