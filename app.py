@@ -75,6 +75,11 @@ def update_genre(genre_id):
         {'genre_name': request.form.get('genre_name')})
     return redirect(url_for('get_genres'))
 
+@app.route('/delete_genre/<genre_id>')
+def delete_genre(genre_id):
+    mongo.db.genres.remove({'_id': ObjectId(genre_id)})
+    return redirect(url_for('get_genres'))    
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
