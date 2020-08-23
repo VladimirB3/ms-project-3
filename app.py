@@ -51,6 +51,10 @@ def update_game(game_id):
     })
     return redirect(url_for('get_games'))
 
+@app.route('/delete_game/<game_id>')
+def delete_game(game_id):
+    mongo.db.games.remove({'_id': ObjectId(game_id)})
+    return redirect(url_for('get_games'))
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

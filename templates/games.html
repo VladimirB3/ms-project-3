@@ -15,18 +15,18 @@
     {% for game in games %}
     <li>
         <div class="collapsible-header">
-            <div class="col s3">
+            <div class="col s3 left-align">
                 <i class="material-icons">videogame_asset</i>
-                <a class="waves-effect waves-light btn btn_small">Info</a>
                 <a href="{{url_for('edit_game', game_id=game._id)}}" class="waves-effect waves-light btn btn_small blue">Edit</a>
+                <a href="{{url_for('delete_game', game_id=game._id)}}" class="waves-effect waves-light btn btn_small red">WIPE</a>
             </div>
             <div class="col s9">
                 <strong>{{game.game_name}}</strong> - {{game.genre_name}}
             </div>
         </div>
-      <div class="collapsible-body"><span>
-      {{game.summary}}
-      </span></div>
+        <div class="collapsible-body">
+            <span>{{game.summary}}</span>
+        </div>
     </li>
     {% endfor %}
   </ul>    
