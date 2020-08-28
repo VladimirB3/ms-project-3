@@ -7,8 +7,6 @@
         <div class="collapsible-header">
             <div class="col s6 valign-wrapper">
                 <i class="large material-icons">videogame_asset</i>
-                <a href="{{url_for('edit_game', game_id=game._id)}}" class="waves-effect waves-light btn btn_small blue">Edit</a>
-                
             </div>
             <div class="col s9 valign-wrapper">
                     <strong>{{game.game_name}}</strong>
@@ -46,8 +44,8 @@
         </div>
         <div class="collapsible-body">
             <div class="center-align">
-                <strong>DELETE GAME INFORMATION - </strong>
-                <span><a href="{{url_for('delete_game', game_id=game._id)}}" class="waves-effect waves-light btn btn_small red">Del</a></span>
+                <strong>CHANGE GAME INFORMATION - </strong>
+                <span><a href="{{url_for('delete_game', game_id=game._id)}}" class="waves-effect waves-light btn btn_small red">Del</a><a href="{{url_for('edit_game', game_id=game._id)}}" class="waves-effect waves-light btn btn_small blue">Edit</a></span>
             </div>
         </div>
     </li>
