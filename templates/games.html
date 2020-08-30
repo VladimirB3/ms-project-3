@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<ul class="collapsible bold-text" data-collapsible="accordion">
+<ul class="collapsible" data-collapsible="accordion">
     {% for game in games %}
     <li>
         <div class="collapsible-header">
             <div class="col s6 valign-wrapper">
                 <i class="large material-icons">videogame_asset</i>
             </div>
-            <div class="col s9 valign-wrapper">
+            <div class="col s9 valign-wrapper bold-text">
                     <strong>{{game.game_name}}</strong>
             </div>
         </div>
