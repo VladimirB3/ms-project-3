@@ -47,7 +47,8 @@ def update_game(game_id):
         'director_name': request.form.get('director_name'),
         'summary': request.form.get('summary'),
         'quality': request.form.get('quality'),
-        'release_date':request.form.get('release_date')
+        'release_date':request.form.get('release_date'),
+        'platforms': request.form.get('platforms')
     })
     return redirect(url_for('get_games'))
 
