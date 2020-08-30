@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css">
@@ -13,8 +13,8 @@
     <header>
         <div class="valign-wrapper">
             <nav>
-                <div class="nav-wrapper amber accent-4">
-                    <a href="{{url_for('get_games')}}" class="brand-logo black-text ">GameDB</a>
+                <div class="nav-wrapper amber accent-4 bold-text">
+                    <a href="{{url_for('get_games')}}" class="brand-logo black-text">GameDB</a>
                     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                         <li>    
@@ -45,7 +45,7 @@
     <div class="container">
     {% block content %} {% endblock %}
     </div>
-    <footer class="page-footer amber accent-4">
+    <footer class="page-footer amber accent-4 bold-text">
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
