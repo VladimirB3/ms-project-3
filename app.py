@@ -4,8 +4,8 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
 app = Flask(__name__)
-app.config["MONGO_DBNAME"] = os.environ.get('MONGO_DBNAME')
-app.config['MONGO_URI'] = os.environ.get('MONGO_URI')
+app.config["MONGO_DBNAME"] = 'videogames'
+app.config["MONGO_URI"] = os.getenv('MONGO_URI', 'mongodb://localhost')
 
 mongo = PyMongo(app)
 
