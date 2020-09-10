@@ -324,7 +324,8 @@ PORT: 5000
 
 To set the environment variable you have to:
 
-•	Check that env.py file exists in the root derictory with all the necessary invormation to connect to MONGODB
+•	Check that env.py file exists in the root derictory with all the necessary invormation to connect to MONGODB inside Gitpod
+•	Check that the correct MONGO_URI was set as inside the environment variable in Heroku using Settings > Config Vars
 
 
 
