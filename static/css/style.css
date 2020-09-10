@@ -1,7 +1,10 @@
+
+/* Added the font style to the whole project */
 html {
     font-family: 'Jura', sans-serif;
 }
 
+/* Added the button style to make the buttons smaller (Referenced from Code Institute Video Tutorial) */
 .btn_small {
     height: 24px;
     width: 60px;
@@ -10,20 +13,26 @@ html {
     padding: 0 0.5em;
 }
 
+/* Styling how the headers appear on the Home page */
 .game_header {
     margin: 5px;
 }
 
+/* Styling to make the displayed information more appealing */
 body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
   }
 
+
+/* Fixing some issues with spacing */
   main {
     flex: 1 0 auto;
   }
 
+
+/* Class to make the text bolt where needed */
 .bold-text {
     font-weight: 700;
 }
