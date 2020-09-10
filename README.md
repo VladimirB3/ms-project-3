@@ -324,11 +324,9 @@ PORT: 5000
 
 To set the environment variable you have to:
 
-•	Go to your Home directory via Terminal window
-•	Use command: nano .bashrc
-•	Near the top of the file type:
+•	Check that env.py file exists in the root derictory with all the necessary invormation to connect to MONGODB
 
-Export MONGO_URI=’mongodb+srv://puika:Meta7gear@myfirstcluster.lzacf.mongodb.net/videogames?retryWrites=true&w=majority’
+
 
 •	Control+X to exit – followed by “Y” to save changes – close the terminal and open a new one.
 ```
